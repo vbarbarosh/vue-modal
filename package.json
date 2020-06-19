@@ -1,0 +1,44 @@
+{
+  "author": "Vladimir Barbarosh",
+  "name": "@vbarbarosh/vue-modal",
+  "version": "1.0.0",
+  "description": "An abstraction for working with modals in Vue",
+  "license": "ISC",
+  "main": "src/vue_modal.js",
+  "unpkg": "dist/vue-modal.js",
+  "jsdelivr": "dist/vue-modal.js",
+  "files": [
+    "src",
+    "dist/*.js"
+  ],
+  "keywords": [
+    "vue",
+    "modal"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "test": "mjs src/*.m.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbarbarosh/vue-modal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vbarbarosh/vue-modal/issues"
+  },
+  "homepage": "https://vue-modal.vbarbarosh.com",
+  "peerDependencies": {
+    "bluebird": "^3.7.2",
+    "jquery": "^3.5.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@vbarbarosh/mjs": "github:vbarbarosh/mjs",
+    "babel-loader": "^8.0.6",
+    "cherio": "^1.0.0-rc.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
