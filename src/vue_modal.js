@@ -85,7 +85,7 @@ function vue_modal(props)
 
 function autofocus(parent)
 {
-    return jQuery(parent).andSelf().find('[autofocus]a, [autofocus] a, [autofocus]button, [autofocus] button, [autofocus]input, [autofocus] input, [autofocus]textarea, [autofocus] textarea').filter(':visible').first().focus().select();
+    return jQuery(parent).addBack().find('[autofocus]a, [autofocus] a, [autofocus]button, [autofocus] button, [autofocus]input, [autofocus] input, [autofocus]textarea, [autofocus] textarea').filter(':visible').first().focus().select();
 }
 
 export default vue_modal;

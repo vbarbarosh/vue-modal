@@ -219,7 +219,7 @@ function vue_modal(props) {
 }
 
 function autofocus(parent) {
-  return jquery__WEBPACK_IMPORTED_MODULE_2___default()(parent).andSelf().find('[autofocus]a, [autofocus] a, [autofocus]button, [autofocus] button, [autofocus]input, [autofocus] input, [autofocus]textarea, [autofocus] textarea').filter(':visible').first().focus().select();
+  return jquery__WEBPACK_IMPORTED_MODULE_2___default()(parent).addBack().find('[autofocus]a, [autofocus] a, [autofocus]button, [autofocus] button, [autofocus]input, [autofocus] input, [autofocus]textarea, [autofocus] textarea').filter(':visible').first().focus().select();
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (vue_modal);

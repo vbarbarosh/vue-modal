@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://unpkg.com/@vbarbarosh/smcss@0.6.1/dist/sm.css" rel="stylesheet" />
+    <title>The most basic example</title>
+</head>
+<body class="checkerboard">
+
+<div id="app" v-show="true" class="w500 ma mv10 pv10 ph15 bs5 white" style="display: none;">
+    <button v-on:click="hello">Hello</button>
+</div>
+
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.js" data-include></script>
+<script src="https://unpkg.com/bluebird@3.7.2/js/browser/bluebird.js" data-include></script>
+<script src="https://unpkg.com/vue@2.6.11/dist/vue.js" data-include></script>
+<script src="https://unpkg.com/@vbarbarosh/vue-modal@1.0.0/dist/vue-modal.js" data-include></script>
+
+<script id="templ-modal-hello" type="text/html">
+    <!-- https://smcss.vbarbarosh.com/demos/#modal -->
+    <div v-on:click="($event.currentTarget === $event.target) && modal.return(false)" class="fix-f oa flex-row" style="background: rgba(0, 0, 0, 0.25)">
+        <div class="ma">
+            <div class="w500 ma mv15 p15 mg15 white border bs15">
+                <p class="xm">Praesent non suscipit lectus. Integer in lectus quam. Sed sed cursus mi. Maecenas mattis, metus ac volutpat vehicula, lacus felis vulputate est, at euismod tortor augue sed neque. Duis porttitor nisl et sapien efficitur, eget feugiat purus dapibus. Nam mattis aliquam felis, in tempor metus tempus at. In molestie vestibulum dolor ut consectetur.</p>
+                <p class="xm">Vestibulum aliquet enim quis sodales tincidunt. Donec vulputate magna diam, id feugiat nisi aliquam in. Cras gravida odio ac metus tincidunt pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum porttitor laoreet neque vel tincidunt. Integer eu scelerisque purus, quis porta ligula. Donec molestie risus ac malesuada laoreet. Duis eleifend enim tincidunt sagittis efficitur. Nunc maximus libero eget rutrum sollicitudin. Praesent cursus non justo sed auctor. Phasellus nibh nibh, egestas eget leo quis, molestie varius felis. In lobortis porta ultrices. Nunc gravida semper diam, a tincidunt urna porta ut. Proin cursus mi quam, vitae lobortis nunc feugiat eu. Maecenas ut gravida lectus, eget tincidunt ante.</p>
+                <div>
+                    <button v-on:click="modal.return(true)">Confirm</button>
+                    <button v-on:click="modal.return(false)">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="js">
+Vue.component('modal-hello', {
+    template: '#templ-modal-hello',
+    inject: ['modal'],
+});
+
+new Vue({
+    el: '#app',
+    methods: {
+        hello: async function () {
+            console.log(await modal_hello().promise());
+        },
+    },
+});
+
+function modal_hello(value)
+{
+    return vue_modal({template: '<modal-hello v-model="value" />', data: {value}});
+}
+</script>
+
+</body>
+</html>

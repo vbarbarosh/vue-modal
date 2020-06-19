@@ -36,6 +36,7 @@
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@vbarbarosh/mjs": "github:vbarbarosh/mjs",
+    "@vbarbarosh/node-cli": "github:vbarbarosh/node-cli",
     "babel-loader": "^8.0.6",
     "cherio": "^1.0.0-rc.2",
     "webpack": "^4.41.5",
