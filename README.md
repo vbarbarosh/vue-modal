@@ -38,11 +38,11 @@ npm i @vbarbarosh/vue-modal
 ### `modal_hello.js`
 
 ```javascript
-import modal from '@vbarbarosh/vue-modal';
+import vue_modal from '@vbarbarosh/vue-modal';
 
 function modal_hello(value)
 {
-    return modal('<modal-hello v-model="value" />', {data: {value}});
+    return vue_modal('<modal-hello v-model="value" />', {data: {value}});
 }
 
 export default modal_hello;
