@@ -5,7 +5,7 @@ This is an answer to a question "how should I work with modals in Vue?".
 In short, for each modal you should create two files: `modal-NAME.vue`
 and `modal_NAME.js`. The former would be an ordinary Vue component
 with all of HTML, JavaScript, and CSS in it, while the latter is
-necessary to represent your modal as simple function.
+necessary to represent your modal as a simple function.
 
 ## Installation
 
