@@ -42,7 +42,7 @@ import vue_modal from '@vbarbarosh/vue-modal';
 
 function modal_hello(value)
 {
-    return vue_modal('<modal-hello v-model="value" />', {data: {value}});
+    return vue_modal({template: '<modal-hello v-model="value" />'}, {data: {value}});
 }
 
 export default modal_hello;
