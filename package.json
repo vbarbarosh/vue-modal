@@ -39,7 +39,7 @@
     "@vbarbarosh/node-cli": "github:vbarbarosh/node-cli",
     "babel-loader": "^8.0.6",
     "cherio": "^1.0.0-rc.2",
-    "webpack": "^4.41.5",
+    "webpack": "^5.104.1",
     "webpack-cli": "^3.3.10"
   }
 }
