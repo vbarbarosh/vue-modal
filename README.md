@@ -63,3 +63,18 @@ Vue({
     }
 });
 ```
+
+## Best practices
+
+How a modal is used is written down in the rulebook,
+[vbarbarosh.github.io/rules](https://vbarbarosh.github.io/rules/): rule
+[FN-14](https://vbarbarosh.github.io/rules/docs/rules.html#FN-14),
+interactions return a boolean commit flag. In short: the modal executes its own action and then calls
+`modal.return(true)` when the change was committed, or `modal.return(false)`
+on cancel or no change; the caller only reads the flag:
+
+```javascript
+if (await modal_upload().promise()) {
+    await this.refresh();
+}
+```
