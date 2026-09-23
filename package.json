@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "webpack",
-    "test": "mjs src/*.m.js"
+    "test": "mocha src/*.m.js"
   },
   "repository": {
     "type": "git",
@@ -29,17 +29,16 @@
   "homepage": "https://vue-modal.vbarbarosh.com",
   "peerDependencies": {
     "bluebird": "^3.7.2",
-    "jquery": "^3.5.1",
-    "vue": "^2.6.11"
+    "jquery": "^3.7.1 || ^4.0.0",
+    "vue": "^2.7.16"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@vbarbarosh/mjs": "github:vbarbarosh/mjs",
-    "@vbarbarosh/node-cli": "github:vbarbarosh/node-cli",
-    "babel-loader": "^8.0.6",
-    "cherio": "^1.0.0-rc.2",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "@babel/core": "^8.0.6",
+    "@babel/preset-env": "^8.0.6",
+    "babel-loader": "^10.1.1",
+    "cheerio": "^1.2.0",
+    "mocha": "^12.0.2",
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3"
   }
 }

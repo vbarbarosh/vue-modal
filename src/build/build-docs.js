@@ -3,7 +3,7 @@
 // node-esm is just a shell script with: `node -r esm "$@"`
 
 import Promise from 'bluebird';
-import cherio from 'cherio';
+import * as cheerio from 'cheerio';
 import fs from 'fs';
 
 const fs_read = Promise.promisify(fs.readFile);
@@ -13,7 +13,7 @@ async function main()
     const out = [];
     for (let i = 2, end = process.argv.length; i < end; ++i) {
         const file = process.argv[i];
-        const $ = cherio.load(await fs_read(file));
+        const $ = cheerio.load(await fs_read(file));
         const html = str_strip_line_spaces($('#html').html());
         const js = str_strip_line_spaces($('#js').html());
         const js_deps = $('script[src][data-include]').map(function () { return $(this).attr('src'); }).toArray();

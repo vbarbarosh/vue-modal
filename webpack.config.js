@@ -9,8 +9,7 @@ function render_config(mode)
         devtool: false,
         output: {
             filename: is_development ? 'vue-modal.js' : 'vue-modal.min.js',
-            library: 'vue_modal',
-            libraryExport: 'default',
+            library: {name: 'vue_modal', type: 'var', export: 'default'},
         },
         externals: {
             bluebird: 'Promise',
