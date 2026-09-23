@@ -151,14 +151,6 @@ function vue_modal(props) {
       show_if_pending: function () {
         return promise_resolve ? this.show() : undefined;
       },
-      end: function (retval) {
-        if (!promise_resolve) {
-          // XXX Simulate old behavior when `end` fn was able to call several times
-          return;
-        }
-        // XXX Deprecated in favor of `return`
-        return this.return(retval);
-      },
       return: function (retval) {
         // This method should be called no more than one time
         promise_resolve(retval);
