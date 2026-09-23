@@ -11,3 +11,6 @@ scriptname=`basename $script`
 cd $scriptdir/..
 
 npm run build
+
+# The demo index the docs page reads is derived from the demo pages
+(cd docs && node ../src/build/build-docs.js demos/*.html > demos.json)

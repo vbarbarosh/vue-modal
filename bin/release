@@ -29,16 +29,16 @@ npm run test
 # Increase a version without commiting it and making a tag
 # XXX This is a hack to disable commiting by substituting `true` for `git`
 npm version $1 --git=/bin/true
-# Rebuild dist
+# Rebuild dist and the demo index
 rm -rf dist
-npm run build
+bin/build
 
 version=$(node -e 'console.log(require("./package.json").version)')
 # Update version in docs
 sed -i 's:\(<sub><sub>v\)[0-9]\+\.[0-9]\+\.[0-9]\+\(</sub></sub>\):\1'$version'\2:' docs/index.html
-sed -i 's:\(https\://unpkg\.com/@vbarbarosh/vue-modal@\)[0-9]\+\.[0-9]\+\.[0-9]\+\(/dist/vue-modal.js\):\1'$version'\2:' docs/index.html
+sed -i 's:\(https\://unpkg\.com/@vbarbarosh/vue-modal@\)[0-9]\+\.[0-9]\+\.[0-9]\+\(/dist/vue-modal.js\):\1'$version'\2:' docs/index.html docs/demos/*.html
 
-git add package.json package-lock.json dist docs/index.html
+git add package.json package-lock.json dist docs/index.html docs/demos docs/demos.json
 git commit -m "release v$version"
 
 # Create a tag
